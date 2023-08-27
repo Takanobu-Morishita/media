@@ -1,5 +1,13 @@
-<h1>投稿一覧</h1>
-<% @posts.each do |post| %>
-  <p>タイトル</p>
-  <span><%=link_to post.title, post_path(post) %></span>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <h1>投稿一覧</h1>
+  <% @posts.each do |post| %>
+    <tr>
+      <th>タイトル</th>
+      <th>ジャンル</th>
+      <th>投稿日</th>
+    </tr>
+    <tr><%=link_to post.title, post_path(post) %></span>
+  <% end %>
+</html>
