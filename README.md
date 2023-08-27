@@ -6,5 +6,6 @@
 1. docker ps でコンテナ名を調べる
 1. docker exec -it コンテナ名 sh
 1. rails db:create
-rails db:migrate
-rails db:seed
+1. rails db:migrate
+1. rails db:seed
+2. df
