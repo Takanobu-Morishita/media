@@ -1,0 +1,18 @@
+<%= form_with model: @post, local: true do |form| %>
+
+  <p><%= form.label :ジャンル %><br>
+    <%= form.select :genre, [["選択して下さい"],["授業"], ["技術"],["サークル"]] %>
+  </p>
+  
+  <p><%= form.label :タイトル %><br>
+    <%= form.text_field :title %>
+  </p>
+  
+  <p><%= form.label :本文 %><br>
+    <%= form.text_area :body %>
+  </p>
+  
+  <p><%= form.submit %>
+  </p>
+  
+  <% end %>
