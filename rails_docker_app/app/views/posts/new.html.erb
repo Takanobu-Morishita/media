@@ -1,3 +1,5 @@
+<%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light" %>
+
 <%= form_with model: @post, local: true do |form| %>
 
   <p><%= form.label :ジャンル %><br>
@@ -15,4 +17,4 @@
   <p><%= form.submit %>
   </p>
   
-  <% end %>
+<% end %>

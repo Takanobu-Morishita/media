@@ -1,1 +1,7 @@
+<%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light" %>
+
 <%= @post.body %>
+
+<div class="post_user_name">
+  <%= link_to(@post.user.username, "/users/#{@post.user.id}") %>
+</div>
