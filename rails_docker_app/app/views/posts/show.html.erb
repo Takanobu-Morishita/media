@@ -1,6 +1,11 @@
-<%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light" %>
+<div>
+  <%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light" %>
+  <% if @post.user_id == current_user.id %>
+    <%= link_to "編集", edit_post_path(@post) %>
+  <% end %>
+</div>
 
-<%= @post.body %>
+<div><%= @post.body %></div>
 
 <div class="post_user_name">
   <%= link_to(@post.user.username, "/users/#{@post.user.id}") %>
