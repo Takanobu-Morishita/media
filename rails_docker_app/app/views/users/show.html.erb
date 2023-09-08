@@ -1,0 +1,11 @@
+<div>
+  <%= link_to "ユーザ一覧", users_path, class: "navbar-item button is-warning is-light" %>
+  <% if @user.id == current_user.id %>
+    <%= link_to "編集", edit_user_path(@user) %>
+  <% end %>
+</div>
+
+<div>ユーザ名:<%= @user.username %></div>
+<div>メールアドレス:<%= @user.email %></div>
+<div>プロフィール:<%= @user.profile %></div>
+
