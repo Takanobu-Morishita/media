@@ -18,3 +18,5 @@
 3. git push origin ブランチ名
 # Docker を消去
 1. docker-compose down
+
+docker-compose down をして立ち上げるときは、docker-compose build をしてから　up
