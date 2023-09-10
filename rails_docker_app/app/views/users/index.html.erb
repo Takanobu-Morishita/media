@@ -4,8 +4,8 @@
   <body>
     <%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light" %>
     <br>
-    <%= link_to "投稿者作成", new_user_path, class: "navbar-item button is-warning is-light" %>
-    <h1>投稿者一覧</h1>
+    <%= link_to "ユーザ作成", new_user_path, class: "navbar-item button is-warning is-light" %>
+    <h1>ユーザ一覧</h1>
     <table>
       <tr>
         <th>ユーザ名</th>
@@ -23,4 +23,5 @@
       <% end %>
     </table>
   </body>
+  <%= paginate @users %>
 </html>
