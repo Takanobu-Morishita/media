@@ -1,7 +1,7 @@
 <div>
   <%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light" %>
   <br>
-  <%= link_to "投稿者一覧", users_path, class: "navbar-item button is-warning is-light" %>
+  <%= link_to "ユーザ一覧", users_path, class: "navbar-item button is-warning is-light" %>
   <%if current_user.present?%>
   <% if @user.id == current_user.id %>
     <%= link_to "編集", edit_user_path(@user) %>
