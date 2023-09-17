@@ -31,6 +31,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def favorites
+    @posts = current_user.favorites_posts
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :body, :genre)

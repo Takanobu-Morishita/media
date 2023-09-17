@@ -1,0 +1,1 @@
+<td><%= button_to 'Unfavorite', post_favorite_path(post_id: post.id, id: current_user.favorites.find_by(post_id: post.id)), method: :delete %></td>
