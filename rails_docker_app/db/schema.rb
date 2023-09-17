@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_16_235314) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "image_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -39,6 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_16_235314) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.text "profile"
+    t.string "profile_image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
