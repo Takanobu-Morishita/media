@@ -16,10 +16,10 @@
       </tr>
       <% @users.each do |user| %>
         <tr>
-          <td><%= link_to user.username, user_path(user) %></td>
-          <td><%= user.email %></td>
-          <td><%= user.created_at.strftime('%Y-%m-%d') %></td>
-          <td><%= user.updated_at.strftime('%Y-%m-%d') %></td>
+          <td style="text-align:center;"><%= link_to user.username, user_path(user) %></td>
+          <td style="text-align:center;"><%= user.email %></td>
+          <td style="text-align:center;"><%= user.created_at.strftime('%Y-%m-%d') %></td>
+          <td style="text-align:center;"><%= user.updated_at.strftime('%Y-%m-%d') %></td>
         </tr>
       <% end %>
     </table>
