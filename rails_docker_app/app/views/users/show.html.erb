@@ -12,6 +12,7 @@
 <div>ユーザ名:<%= @user.username %></div>
 <div>メールアドレス:<%= @user.email %></div>
 <div>プロフィール:<%= @user.profile %></div>
+
 <br>
 <% if @user.id == current_user.id %>
 <%= button_to "削除", user_path(@user), method: :delete, data: {confirm: "投稿を削除します。よろしいですか？"} %>
@@ -29,4 +30,3 @@
         </tr>
       <% end %>
     </table>
-
