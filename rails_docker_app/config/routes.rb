@@ -6,7 +6,11 @@ Rails.application.routes.draw do
       get :favorites
     end
   end
-  resources :users, only:[:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :users, only:[:index, :show, :new, :create, :edit, :update, :destroy] do
+    member do
+      get :favorites
+    end
+  end
 
   root to: "home#index"
   devise_scope :user do

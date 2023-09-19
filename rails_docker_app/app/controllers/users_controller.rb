@@ -11,6 +11,9 @@ class UsersController < ApplicationController
       favorites = Favorite.where(user_id: current_user.id).pluck(:post_id)  # ログイン中のユーザーのお気に入りのpost_idカラムを取得
       @favorite_list = Post.find(favorites)
     end
+
+    favorites = Favorite.where(user_id: @user.id).pluck(:post_id)
+    @favorite_posts = Post.find(favorites)
   end
   
   def new
