@@ -8,7 +8,12 @@
 </div>
 
 <div><%= @post.body %></div>
+<br>
+<% if @post.user_id == current_user.id %>
+  <%= button_to "削除", post_path(@post), method: :delete, data: {confirm: "投稿を削除します。よろしいですか？"} %>
+<% end %>
+<br>
 
 <div class="post_user_name">
-  <%= link_to(@post.user.username, "/users/#{@post.user.id}") %>
+  <%= link_to(@post.user.username, "/users/#{@post.user.id}") %>さんのページ
 </div>

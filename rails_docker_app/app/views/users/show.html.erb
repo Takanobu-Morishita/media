@@ -8,7 +8,25 @@
   <% end %>
   <% end %>
 </div>
-
+<br>
 <div>ユーザ名:<%= @user.username %></div>
 <div>メールアドレス:<%= @user.email %></div>
 <div>プロフィール:<%= @user.profile %></div>
+
+<br>
+<% if @user.id == current_user.id %>
+<%= button_to "削除", user_path(@user), method: :delete, data: {confirm: "投稿を削除します。よろしいですか？"} %>
+<% end %>
+<br>
+
+<h1><%= @user.username %>さんがいいねした投稿</h1>
+    <table>
+      <tr>
+        <th>タイトル</th>
+      </tr>
+      <% @posts.each do |post| %>
+        <tr>
+          <td style="text-align:center;"><%= link_to post.title, post_path(post) %></td>
+        </tr>
+      <% end %>
+    </table>
