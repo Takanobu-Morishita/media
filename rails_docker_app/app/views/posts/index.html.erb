@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head><link rel="stylesheet" href="./app/assets/stylesheets/application.css"></head>
+  <head>
+    <title>KEIO CUMPAS HACK</title>
+  </head>
   <body>
     <div class="index_menu">
       <br>
@@ -27,6 +29,8 @@
         </tr>
       <% end %>
     </table>
+    <div class="page">
+    <%= paginate @posts %>
+    </div>
   </body>
-  <%= paginate @posts %>
 </html>
