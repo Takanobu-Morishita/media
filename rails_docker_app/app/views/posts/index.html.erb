@@ -10,6 +10,8 @@
       <%= link_to "投稿作成", new_post_path, class: "navbar-item button is-warning is-light", id: "make_post" %>
       <br>
     <h1 class="list">投稿一覧</h1>
+    <%= link_to '新着順', posts_path(latest: "true") %>
+    <%= link_to '古い順', posts_path(old: "true") %>
     <table class="list_content">
       <tr>
         <th>タイトル</th>
