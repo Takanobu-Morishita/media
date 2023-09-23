@@ -13,3 +13,108 @@
  *= require_tree .
  *= require_self
  */
+
+.title {
+  text-align: center;
+  font-size: 30px;
+}
+
+.header, .index_menu, .delete, .post_user_name {
+  margin-left: 24px;
+}
+
+#title_name, #post_title, #post_title_2, #edit, .post_user_name {
+  text-decoration: none;
+}
+
+.title:hover,.header-nav:hover,.navbar-item:hover
+, #post_title:hover, .post_user_name:hover, #edit:hover {
+  opacity: 0.7;
+}
+
+.menu {
+  display: flex;
+  float: right;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+#post,#post_list {
+  border: 3px solid;
+  background-color: gray;
+  text-decoration: none;
+  color: white;
+  padding: 2px 2px;
+  font-size: 18px;
+}
+
+.header-nav, #header_edit {
+  padding: 0px 8px;
+  text-decoration: none;
+}
+
+.navbar-item {
+  padding: 0px 8px;
+  text-decoration: none
+}
+
+
+.tilte_content {
+  color: blue;
+  text-align: center;
+
+}
+
+.content_text {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.index_menu, .post_user_name {
+  padding: 8px 0px;
+}
+
+#user_list, #make_post, #user_list_2, #post_list_2
+,#user_list_3, #post_list_3, #user_list_4, #post_list_4
+, #post_list_5, #user_list_5, #header_edit {
+  border: 3px solid;
+  font-size: 15px;
+}
+
+#edit {
+  border: 3px solid;
+  font-size: 15px;
+  padding: 0px 8px;
+}
+
+#posts_list {
+  border: 3px solid;
+  font-size: 15px;
+}
+
+.list {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.display, .display_title
+, .display_body, .display_update
+,.display_genre, .display_title, .display_body, .display_post
+, .field, .display_username, .display_profile, .display_register
+, .display_mail , .display_delete, .actions, .render {
+  margin-left: 40%;
+  margin-bottom: 16px;
+}
+
+.list_content {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px;
+  font-size: 20px;
+}
+
+.post_body {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 24px;
+}

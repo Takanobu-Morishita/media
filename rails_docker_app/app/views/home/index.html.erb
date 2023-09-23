@@ -1,8 +1,10 @@
-<br>
-<%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light" %>
-<br>
-<%= link_to "投稿者一覧", users_path, class: "navbar-item button is-warning is-light" %>
+<div class="header">
+<%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light", id: "post" %>
+<%= link_to "投稿者一覧", users_path, class: "navbar-item button is-warning is-light", id: "post_list" %>
+</div>
 
-<h2>慶應のキャンパスライフをハックせよ！</h2>
-<h3>ここでは先輩方の知識と経験による大学生活を豊かに過ごす情報がたくさんあります！
+<h2 class="tilte_content">慶應のキャンパスライフをハックせよ！</h2>
+<h3 class="content_text">ここでは先輩方の知識と経験による大学生活を豊かに過ごす情報がたくさんあります！
 大学生活では情報収集がとても重要になりますので、ぜひ活用して下さい！</h3>
+
+<link rel="stylesheet" href="./app/assets/stylesheets/application.css">

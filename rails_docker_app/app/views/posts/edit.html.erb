@@ -1,14 +1,18 @@
-<h1>編集画面</h1>
+  <h1 class="display">編集画面</h1>
+
 <%= form_for(@post, url: post_path(@post)) do |f| %>
-<div>
+<div class="display_title">
   <%= f.label :タイトル %><br>
   <%= f.text_field :title, autofocus: true, :placeholder =>"#{@post.title}" %>
 </div>
-<div>
+<div class="display_body">
   <%= f.label :本文 %><br>
   <%= f.text_area :body, :placeholder =>"#{@post.body}" %>
 </div>
-<div>
+<div class="display_update">
 <%= f.submit "更新" %>
 </div>
+
+<link rel="stylesheet" href="./app/assets/stylesheets/application.css">
 <% end %>
+
