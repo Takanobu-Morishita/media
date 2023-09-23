@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head><link rel="stylesheet" href="./app/assets/stylesheets/application.css"></head>
+  <body>
+    <div class="index_menu">
+      <br>
+      <%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light", id: "user_list_4" %>
+      <%= link_to "ユーザ一覧", users_path, class: "navbar-item button is-warning is-light", id: "user_list" %>
+      <%= link_to "投稿作成", new_post_path, class: "navbar-item button is-warning is-light", id: "make_post" %>
+      <br>
+
+      <% if user_signed_in? %>
+        <div class="search_form">
+          <%= form_with url: search_path, local: true, method: :get do |f| %>
+            <%= f.text_field :word %>
+            <%= f.select :genre, options_for_select([["選択しない", nil], ["授業", "授業"], ["技術", "技術"], ["サークル", "サークル"]]) %>
+            <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
+            <%= f.submit "検索", class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      <% end %>
+    
+      <h1 class="list">検索結果</h1>
+    
+      <% if @genre.present? %>
+        <p>選択されたジャンル: <%= @genre %></p>
+      <% end %>
+
+      <p>検索ワード: <%= @search_word %> </p>
+      
+      <table class="list_content table-hover table-inverse">
+        <tbody>
+          <tr>
+            <th>タイトル</th>
+            <th>ジャンル</th>
+            <th>投稿日</th>
+            <th>いいね！数</th>
+          </tr>
+
+          <% @posts.each do |post| %>
+            <tr>
+              <td style="text-align:center;"><%= link_to post.title, post_path(post), id: "post_title" %></td>
+              <td style="text-align:center;"><%= post.genre %></td>
+              <td style="text-align:center;"><%= post.created_at.strftime('%Y-%m-%d') %></td>
+              <td style="text-align:center;"><%= post.favorites.count %></td>
+              <% if current_user.present? %>
+                <%= render 'favorite_button', {post: post} %>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
