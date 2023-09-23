@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.page(params[:page]).per(3)
+    if params[:latest]
+      @posts = Post.latest.page(params[:page]).per(3)
+    elsif params[:old]
+      @posts = Post.old.page(params[:page]).per(3)
+    else
+      @posts = Post.all.page(params[:page]).per(3)
+    end
   end
 
   def show
