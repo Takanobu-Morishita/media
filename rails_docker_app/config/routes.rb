@@ -19,4 +19,6 @@ Rails.application.routes.draw do
 
   get "search" => "searches#search"
 
+  root 'home#index'
+  resources :posts, only:[:index, :show]
 end

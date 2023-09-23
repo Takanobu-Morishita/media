@@ -8,3 +8,8 @@
 大学生活では情報収集がとても重要になりますので、ぜひ活用して下さい！</h3>
 
 <link rel="stylesheet" href="./app/assets/stylesheets/application.css">
+<h1>投稿一覧</h1>
+<% @posts.each do |post| %>
+  <p>タイトル</p>
+  <span><%=link_to post.title, post_path(post) %></span>
+<% end %>
