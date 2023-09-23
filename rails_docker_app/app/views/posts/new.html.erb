@@ -1,22 +1,23 @@
-<%= link_to "ユーザ一覧", users_path, class: "navbar-item button is-warning is-light" %>
-<br>
-<%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light" %>
-
+<div class="header">
+  <%= link_to "ユーザ一覧", users_path, class: "navbar-item button is-warning is-light", id: "user_list_2" %>
+  <%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light", id: "post_list_2" %>
+</div>
 <%= form_with model: @post, local: true do |form| %>
 
-  <p><%= form.label :ジャンル %><br>
+  <h1 class="display">投稿作成</h1>
+  <p class="display_genre"><%= form.label :ジャンル %><br>
     <%= form.select :genre, [["選択して下さい"],["授業"], ["技術"],["サークル"]] %>
   </p>
   
-  <p><%= form.label :タイトル %><br>
+  <p class="display_title"><%= form.label :タイトル %><br>
     <%= form.text_field :title %>
   </p>
   
-  <p><%= form.label :本文 %><br>
+  <p class="display_body"><%= form.label :本文 %><br>
     <%= form.text_area :body %>
   </p>
   
-  <p><%= form.submit "投稿する" %>
+  <p class="display_post"><%= form.submit "投稿する" %>
   </p>
   
 <% end %>

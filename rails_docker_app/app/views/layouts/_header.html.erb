@@ -1,5 +1,8 @@
-<h1><%= link_to "KEIO CAMPUS HACK", root_path %></h1>
+<div class="title">
+<h1><%= link_to "KEIO CAMPUS HACK", root_path, id: "title_name" %></h1>
+</div>
 
+<div class="menu">
 <% if user_signed_in? %>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-nav" %>
 
@@ -11,3 +14,6 @@
 <% if current_user.present? %>
 	<%= link_to "マイページ", user_path(current_user), class: "navbar-item button is-warning is-light" %>
 <% end %>
+</div>
+
+<link rel="stylesheet" href="./app/assets/stylesheets/application.css">
