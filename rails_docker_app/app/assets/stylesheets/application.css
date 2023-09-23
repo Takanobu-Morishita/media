@@ -23,12 +23,12 @@
   margin-left: 24px;
 }
 
-#title_name, #post_title, #post_title_2, #edit, .post_user_name {
+#title_name, #post_title, #post_title_2, #edit, .post_user_name, .page-link {
   text-decoration: none;
 }
 
 .title:hover,.header-nav:hover,.navbar-item:hover
-, #post_title:hover, .post_user_name:hover, #edit:hover {
+, #post_title:hover, .post_user_name:hover, #edit:hover, .page-link:hover {
   opacity: 0.7;
 }
 
@@ -117,4 +117,20 @@
   font-size: 20px;
   text-align: center;
   margin-top: 24px;
+}
+
+.page {
+  margin-top: 16px;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+  width: 50px;
+  justify-content: space-between;
+  text-align: center;
+  margin-left: 40%;
+}
+.page-link {
+  padding: 0px 8px;
 }
