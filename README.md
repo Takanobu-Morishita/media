@@ -1,5 +1,4 @@
 # Googleスライド
-# Google Slide
 https://docs.google.com/presentation/d/18S8sK6JKS8-c_U1QtgzXisFpgaY4sjfDI1VV6mw0hD8/edit?usp=sharing
 # リポジトリをクローン
 1. docker アプリを立ち上げる
