@@ -20,3 +20,5 @@
 1. docker-compose down
 
 docker-compose down をして立ち上げるときは、docker-compose build をしてから　up
+# Google Slide
+https://docs.google.com/presentation/d/18S8sK6JKS8-c_U1QtgzXisFpgaY4sjfDI1VV6mw0hD8/edit?pli=1#slide=id.g245512e8551_0_20
