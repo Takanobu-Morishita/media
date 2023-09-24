@@ -5,7 +5,9 @@
   <div class="header">
       <%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light", id: "user_list_4" %>
       <%= link_to "ユーザ一覧", users_path, class: "navbar-item button is-warning is-light", id: "user_list" %>
-      <%= link_to "投稿作成", new_post_path, class: "navbar-item button is-warning is-light", id: "make_post" %>
+      <%if current_user.present?%>
+        <%= link_to "投稿作成", new_post_path, class: "navbar-item button is-warning is-light", id: "make_post" %>
+      <% end %>
   
   <body>
     
