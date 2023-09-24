@@ -24,12 +24,15 @@
 }
 
 #title_name, #post_title, #post_title_2, #edit, .post_user_name, .page-link, #order_new, #order_old {
+
   text-decoration: none;
 }
 
 .title:hover,.header-nav:hover,.navbar-item:hover
+
 , #post_title:hover, .post_user_name:hover, #edit:hover, .page-link:hover
 , #order_new:hover, #order_old:hover {
+
   opacity: 0.7;
 }
 

@@ -5,6 +5,7 @@
 
   <div class="field">
     <%= f.label :email, "メールアドレス" %><br />
+    <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
   </div>
 
