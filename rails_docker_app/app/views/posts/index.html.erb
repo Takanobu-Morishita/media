@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-  <head><link rel="stylesheet" href="./app/assets/stylesheets/application.css"></head>
+  <head>
+    <title>KEIO CUMPAS HACK</title>
+  </head>
   <body>
     <div class="index_menu">
       <br>
@@ -19,6 +21,10 @@
       <% end %>
 
     <h1 class="list">投稿一覧</h1>
+    <div class="order">
+      <%= link_to '新着順', posts_path(latest: "true"), id: "order_new" %>
+      <%= link_to '古い順', posts_path(old: "true"), id: "order_old" %>
+    </div>
     <table class="list_content">
       <tr>
         <th>タイトル</th>
@@ -38,6 +44,8 @@
         </tr>
       <% end %>
     </table>
+    <div class="page">
+    <%= paginate @posts %>
+    </div>
   </body>
-  <%= paginate @posts %>
 </html>

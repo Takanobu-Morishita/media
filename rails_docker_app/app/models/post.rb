@@ -6,7 +6,6 @@ class Post < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
 
-
   # 検索方法分岐
   def self.looks(search, word, genre)
     if word.present? && genre.present?
@@ -40,4 +39,7 @@ class Post < ApplicationRecord
     end
   end
   
+  scope :latest, -> { order(created_at: :desc) }  #desc = 降順
+  scope :old, -> { order(created_at: :asc) }  #asc = 昇順
+
 end

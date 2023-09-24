@@ -8,10 +8,12 @@
 </div>
 
 <div class="post_body"><%= @post.body %></div>
-<div class="delete"
-<% if @post.user_id == current_user.id %>
-  <%= button_to "削除", post_path(@post), method: :delete, data: {confirm: "投稿を削除します。よろしいですか？"} %>
-<% end %>
+<div class="delete">
+  <% if current_user.present? %>
+    <% if @post.user_id == current_user.id %>
+      <%= button_to "削除", post_path(@post), method: :delete, data: {confirm: "投稿を削除します。よろしいですか？"} %>
+    <% end %>
+  <% end %>
 </div>
 
 <div class="post_user_name"> 

@@ -9,10 +9,19 @@
 
 #１つずつテストデータを追加する場合
 
-100.times do |n|
-    Post.create!(
-        title: "test#{n + 1}人目",
-        body: "test#{n + 1}回目",
-        genre: "test#{n + 1}@test.com",
+30.times do |n|
+    User.create!(
+        email: "#{n + 1}@a",
+        encrypted_password: "#{n + 1}"*6,
+        username: "user#{n + 1}",
+        profile: "#{n + 1}",
 )
+
+    Post.create!(
+            title: "test#{n + 1}人目",
+            body: "test#{n + 1}回目",
+            genre: "test#{n + 1}@test.com",
+            user_id: "#{n + 1}",
+    )
+
 end

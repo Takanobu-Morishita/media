@@ -13,9 +13,11 @@
 <div class="display_profile">プロフィール:<%= @user.profile %></div>
 
 <div class="display_delete">
-<% if @user.id == current_user.id %>
-<%= button_to "削除", user_path(@user), method: :delete, data: {confirm: "投稿を削除します。よろしいですか？"} %>
-<% end %>
+  <% if current_user.present? %>
+    <% if @user.id == current_user.id %>
+    <%= button_to "削除", user_path(@user), method: :delete, data: {confirm: "投稿を削除します。よろしいですか？"} %>
+    <% end %>
+  <% end %>
 </div>
 
 
