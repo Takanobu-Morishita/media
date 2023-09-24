@@ -7,6 +7,7 @@
   <% end %>
 </div>
 
+<h1><%= @post.title %></h1>
 <div class="post_body"><%= @post.body %></div>
 <div class="delete">
   <% if current_user.present? %>
