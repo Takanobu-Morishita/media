@@ -40,15 +40,6 @@
   margin-bottom: 16px;
 }
 
-#post,#post_list {
-  border: 3px solid;
-  background-color: gray;
-  text-decoration: none;
-  color: white;
-  padding: 2px 2px;
-  font-size: 18px;
-}
-
 .header-nav, #header_edit {
   padding: 0px 8px;
   text-decoration: none;
@@ -63,19 +54,20 @@
 .tilte_content {
   color: blue;
   text-align: center;
-
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
-.content_text {
+.content_text, .tilte_content {
   max-width: 600px;
   margin: 0 auto;
 }
 
-.index_menu, .post_user_name {
+.post_user_name {
   padding: 8px 0px;
 }
 
-#user_list, #make_post, #user_list_2, #post_list_2
+#post, #post_list, #user_list, #make_post, #user_list_2, #post_list_2
 ,#user_list_3, #post_list_3, #user_list_4, #post_list_4
 , #post_list_5, #user_list_5, #header_edit {
   border: 3px solid;
@@ -93,7 +85,7 @@
   font-size: 15px;
 }
 
-.list, .order {
+.list, .order, .result {
   text-align: center;
   margin-bottom: 16px;
 }
@@ -135,4 +127,9 @@
 
 .page-link {
   padding: 0px 8px;
+}
+
+.search_form {
+  margin-top: 16px;
+  margin-left: 8px;
 }
