@@ -3,22 +3,20 @@
   <head>
     <title>KEIO CUMPAS HACK</title>
   </head>
+
+  <div class="header">
+    <%= link_to "ユーザ一覧", users_path, class: "navbar-item button is-warning is-light", id: "user_list" %>
+    <%= link_to "投稿作成", new_post_path, class: "navbar-item button is-warning is-light", id: "make_post" %>
+  </div>
   <body>
-    <div class="index_menu">
-      <br>
-      <%= link_to "ユーザ一覧", users_path, class: "navbar-item button is-warning is-light", id: "user_list" %>
-      <%= link_to "投稿作成", new_post_path, class: "navbar-item button is-warning is-light", id: "make_post" %>
-      <br>
-      <% if user_signed_in? %>
-        <div class="search_form">
-          <%= form_with url: search_path, local: true, method: :get do |f| %>
-            <%= f.text_field :word %>
-            <%= f.select :genre, options_for_select([["選択しない", nil], ["授業", "授業"], ["技術", "技術"], ["サークル", "サークル"]]) %>
-            <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
-            <%= f.submit "検索", class: "btn btn-primary" %>
-          <% end %>
-        </div>
-      <% end %>
+    
+      <div class="search_form">
+        <%= form_with url: search_path, local: true, method: :get do |f| %>
+          <%= f.text_field :word %>
+          <%= f.select :genre, options_for_select([["ジャンル", nil],["全て", nil], ["授業", "授業"], ["技術", "技術"], ["サークル", "サークル"]]) %>
+          <%= f.submit "検索", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     <h1 class="list">投稿一覧</h1>
     <div class="order">
       <%= link_to '新着順', posts_path(latest: "true"), id: "order_new" %>
