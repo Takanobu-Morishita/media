@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       get :favorites
     end
   end
-  resources :users, only:[:index, :show, :new, :create, :edit, :update, :destroy] do
+  resources :users, only:[:index, :show, :edit, :update, :destroy] do
     member do
       get :favorites
     end
