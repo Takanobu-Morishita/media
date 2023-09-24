@@ -6,6 +6,7 @@
 
   <div class="field">
     <%= f.label :password, "新しいパスワード" %><br />
+    <%= f.label :password, "New password" %><br />
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em><br />
     <% end %>
@@ -14,6 +15,7 @@
 
   <div class="field">
     <%= f.label :password_confirmation, "新しいパスワードの確認" %><br />
+    <%= f.label :password_confirmation, "Confirm new password" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
