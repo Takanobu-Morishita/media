@@ -23,12 +23,13 @@
   margin-left: 24px;
 }
 
-#title_name, #post_title, #post_title_2, #edit, .post_user_name, .page-link {
+#title_name, #post_title, #post_title_2, #edit, .post_user_name, .page-link, #order_new, #order_old {
   text-decoration: none;
 }
 
 .title:hover,.header-nav:hover,.navbar-item:hover
-, #post_title:hover, .post_user_name:hover, #edit:hover, .page-link:hover {
+, #post_title:hover, .post_user_name:hover, #edit:hover, .page-link:hover
+, #order_new:hover, #order_old:hover {
   opacity: 0.7;
 }
 
@@ -92,7 +93,7 @@
   font-size: 15px;
 }
 
-.list {
+.list, .order {
   text-align: center;
   margin-bottom: 16px;
 }
@@ -131,6 +132,7 @@
   text-align: center;
   margin-left: 40%;
 }
+
 .page-link {
   padding: 0px 8px;
 }
