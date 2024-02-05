@@ -4,17 +4,18 @@
 ```
 cd rails_docker_app
 ```
+　・ビルドする
 ```
 docker-compose build
 ```
-7.サーバ立ち上げ
-   ```
-   docker-compose up
-   ```
-9. railsに入る
-   ```
-   docker compose exec web bash
-   ```
+・サーバを立ち上げる
+```
+docker-compose up
+```
+・railsに入る
+```
+docker compose exec web bash
+```
 # データベース準備  
 1.```
    rails db:create
