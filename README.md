@@ -8,7 +8,9 @@
 7. docker ps でコンテナ名を調べる
 8. docker exec -it コンテナ名 sh
 
-```cd rails_docker_app```
+```
+cd rails_docker_app
+```
 # データベース準備  
 1. rails db:create
 2. rails db:migrate
