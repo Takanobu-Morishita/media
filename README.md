@@ -4,7 +4,7 @@
 ```
 cd rails_docker_app
 ```
-　・ビルドする
+・ビルドする
 ```
 docker-compose build
 ```
