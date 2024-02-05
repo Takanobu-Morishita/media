@@ -3,12 +3,17 @@
 2. ```
    cd rails_docker_app
    ```
-5. docker-compose build
-6. docker-compose up -d
-7. railsに入る
-   docker compose exec app bash
-8. docker ps でコンテナ名を調べる
-9. docker exec -it コンテナ名 sh
+5. ```
+   docker-compose build
+   ```
+6. ```
+   docker-compose up
+   ```
+8. railsに入る
+   ```
+   docker compose exec web bash
+   ```
+(docker ps でコンテナ名を調べる、docker exec -it コンテナ名 sh）
 
 ```
 cd rails_docker_app
