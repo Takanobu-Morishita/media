@@ -1,5 +1,5 @@
 # リポジトリをクローン
-docker アプリを立ち上げる  
+＊はじめにdockerアプリを立ち上げること  
 rails_docker_appに移動する
 ```
 cd rails_docker_app
