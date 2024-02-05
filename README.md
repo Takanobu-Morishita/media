@@ -1,27 +1,27 @@
 # リポジトリをクローン
 1. docker アプリを立ち上げる
-2. ```
+2. rails_docker_appに移動する
+   ```
    cd rails_docker_app
    ```
-5. ```
+5.ビルドする
+   ```
    docker-compose build
    ```
-6. ```
+7.サーバ立ち上げ
+   ```
    docker-compose up
    ```
-8. railsに入る
+9. railsに入る
    ```
    docker compose exec web bash
    ```
-(docker ps でコンテナ名を調べる、docker exec -it コンテナ名 sh）
-
-```
-cd rails_docker_app
-```
 # データベース準備  
-1. rails db:create
-2. rails db:migrate
-3. rails db:seed
+1.```
+   rails db:create
+   ```
+3. rails db:migrate
+4. rails db:seed
 # ブランチ作成 
 1. git branch ブランチ名
 2. git checkout ブランチ名
