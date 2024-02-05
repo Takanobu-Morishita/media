@@ -4,8 +4,7 @@
    ```
    cd rails_docker_app
    ```
-5.ビルドする
-   ```
+5. ```
    docker-compose build
    ```
 7.サーバ立ち上げ
