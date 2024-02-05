@@ -17,11 +17,21 @@ docker-compose up
 docker compose exec web bash
 ```
 # データベース準備  
-1.```
-   rails db:create
-   ```
-3. rails db:migrate
-4. rails db:seed
+・データベースを作成する
+```
+rails db:create
+```
+・データベースをテーブルに反映する
+```
+rails db:migrate
+```
+・データベースにデータを投入する
+```
+rails db:seed
+```
+```
+rails db:seed_fu
+```
 # ブランチ作成 
 1. git branch ブランチ名
 2. git checkout ブランチ名
@@ -29,8 +39,10 @@ docker compose exec web bash
 1. git add .
 2. git commit -m 'メッセージ'
 3. git push origin ブランチ名
-# Docker を消去
-1. docker-compose down
+# Dockerイメージを消去
+```
+docker-compose down
+``` 
 
 docker-compose down をして立ち上げるときは、docker-compose build をしてから　up
 
