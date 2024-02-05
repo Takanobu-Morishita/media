@@ -1,6 +1,6 @@
 # リポジトリをクローン
 1. docker アプリを立ち上げる
-2. cd rails_docker_app
+2. ```cd rails_docker_app```
 3. docker-compose build
 4. docker-compose up -d
 5. railsに入る
