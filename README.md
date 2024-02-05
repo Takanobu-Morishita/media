@@ -1,12 +1,14 @@
 # リポジトリをクローン
 1. docker アプリを立ち上げる
-2. ```cd rails_docker_app```
-3. docker-compose build
-4. docker-compose up -d
-5. railsに入る
+2. ```
+   cd rails_docker_app
+   ```
+5. docker-compose build
+6. docker-compose up -d
+7. railsに入る
    docker compose exec app bash
-7. docker ps でコンテナ名を調べる
-8. docker exec -it コンテナ名 sh
+8. docker ps でコンテナ名を調べる
+9. docker exec -it コンテナ名 sh
 
 ```
 cd rails_docker_app
