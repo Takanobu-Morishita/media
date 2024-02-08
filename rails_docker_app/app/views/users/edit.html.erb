@@ -12,6 +12,10 @@
   <%= f.label :プロフィール %><br>
   <%= f.text_area :profile, :placeholder =>"#{@user.profile}" %>
 </div>
+<div class="display_profile">
+  <%= f.label :管理者 %><br>
+  <%= f.text_area :role, :placeholder =>"#{@user.role}" %>
+</div>
 <div class="display_update">
   <%= f.submit "更新する" %>
 </div>
