@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :favorites, dependent: :destroy
   has_many :favorites_posts, through: :favorites, source: :post
+
+  enum role: { general: 0, admin: 1 }
   
   def mine?(object)
     object.user_id == id
