@@ -3,16 +3,14 @@
   <head><link rel="stylesheet" href="./app/assets/stylesheets/application.css"></head>
   
   <div class="header">
-      <%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light", id: "user_list_4" %>
-      <%= link_to "ユーザ一覧", users_path, class: "navbar-item button is-warning is-light", id: "user_list" %>
-      <%if current_user.present?%>
-        <%= link_to "投稿作成", new_post_path, class: "navbar-item button is-warning is-light", id: "make_post" %>
-      <% end %>
-  
+    <%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light", id: "user_list_4" %>
+    <%= link_to "ユーザ一覧", users_path, class: "navbar-item button is-warning is-light", id: "user_list" %>
+    <%if current_user.present?%>
+      <%= link_to "投稿作成", new_post_path, class: "navbar-item button is-warning is-light", id: "make_post" %>
+    <% end %>
+  </div>
+
   <body>
-    
-
-
     <div class="search_form">
       <%= form_with url: search_path, local: true, method: :get do |f| %>
         <%= f.text_field :word %>
@@ -22,16 +20,16 @@
     </div>
 
 
-      <h1 class="list">検索結果</h1>
+    <h1 class="list">検索結果</h1>
 
-      <div class="result">
-        <% if @genre.present? %>
-          <p>選択されたジャンル: <%= @genre %></p>
-        <% end %>
+    <div class="result">
+      <% if @genre.present? %>
+        <p>選択されたジャンル: <%= @genre %></p>
+      <% end %>
 
-        <p>検索ワード: <%= @search_word %> </p>
-      </div>
-
+      <p>検索ワード: <%= @search_word %> </p>
+    </div>
+    <div>
       <table class="list_content table-hover table-inverse">
         <tbody>
           <tr>
