@@ -13,8 +13,13 @@
   <%= f.text_area :profile, :placeholder =>"#{@user.profile}" %>
 </div>
 <div class="display_profile">
-  <%= f.label :管理者 %><br>
-  <%= f.text_area :role, :placeholder =>"#{@user.role}" %>
+  <%= f.label :管理者 %>
+  <%= f.select :role, User.roles_i18n.invert, class: 'form-control' %>
+</div>
+<div class="display_image">
+  <%= f.label :image %>
+  <%= f.file_field :image, class:'f-control', accept: 'image/*'%>
+  <%= f.hidden_field :image_cache %>
 </div>
 <div class="display_update">
   <%= f.submit "更新する" %>
