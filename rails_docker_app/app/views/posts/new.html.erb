@@ -2,22 +2,28 @@
   <%= link_to "ユーザ一覧", users_path, class: "navbar-item button is-warning is-light", id: "user_list_2" %>
   <%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light", id: "post_list_2" %>
 </div>
-<%= form_with model: @post, local: true do |form| %>
+<%= form_with model: @post, local: true do |f| %>
 
   <h1 class="display">投稿作成</h1>
-  <p class="display_genre"><%= form.label :ジャンル %><br>
-    <%= form.select :genre, [["選択して下さい"], ["生活"], ["授業"], ["技術"],["サークル"]] %>
-  </p>
+  <div class="display_genre"><%= f.label :ジャンル %><br>
+    <%= f.select :genre, [["選択して下さい"], ["生活"], ["授業"], ["技術"],["サークル"]] %>
+  </div>
   
-  <p class="display_title"><%= form.label :タイトル %><br>
-    <%= form.text_field :title %>
-  </p>
+  <div class="display_title"><%= f.label :タイトル %><br>
+    <%= f.text_field :title %>
+  </div>
   
-  <p class="display_body"><%= form.label :本文 %><br>
-    <%= form.text_area :body %>
-  </p>
+  <div class="display_body"><%= f.label :本文 %><br>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="display_image">
+    <%= f.label :image %>
+    <%= f.file_field :image, class:'f-control', accept: 'image/*'%>
+    <%= f.hidden_field :image_cache %>
+  </div>
   
-  <p class="display_post"><%= form.submit "投稿する" %>
-  </p>
+  <div class="display_post"><%= f.submit "投稿する" %>
+  </div>
   
 <% end %>

@@ -16,7 +16,11 @@ ja:
         encrypted_password: パスワード
         role: 権限
         profile: プロフィール
+        image: プロフィール画像
         posts: 投稿
+        role:
+          general: '一般'
+          admin: '管理者'
         favorites: いいね
         favorites_posts: いいねした投稿
         created_at: 登録日
@@ -33,7 +37,7 @@ ja:
         updated_at: 更新日
         content: 説明
         favorites: いいね
-        image: 画像
+        image: サムネール
       favorite:
         id: ID
         user: ユーザー

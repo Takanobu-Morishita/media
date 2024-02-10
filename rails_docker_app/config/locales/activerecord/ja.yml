@@ -4,3 +4,15 @@ ja:
       role:
         general: '一般'
         admin: '管理者'
+    post:
+      genre:
+        technology: '技術'
+        life: '生活'
+        hobby: '趣味'
+        other: 'その他'
+      image: サムネール
+    user:
+      role:
+        general: '一般'
+        admin: '管理者'
+      image: プロフィール画像

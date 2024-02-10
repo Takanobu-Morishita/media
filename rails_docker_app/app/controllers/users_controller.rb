@@ -53,6 +53,8 @@ class UsersController < ApplicationController
         :username, 
         :profile, 
         :email, 
-        :role)
+        :role,
+        :image, 
+        :image_cache,)
     end
 end

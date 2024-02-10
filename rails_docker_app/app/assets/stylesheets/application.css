@@ -50,7 +50,6 @@
   text-decoration: none
 }
 
-
 .tilte_content {
   color: blue;
   text-align: center;
@@ -92,7 +91,7 @@
 
 .display, .display_title
 , .display_body, .display_update
-,.display_genre, .display_title, .display_body, .display_post
+,.display_genre, .display_title, .display_body, .display_genre, .display_image, .display_post
 , .field, .display_username, .display_profile, .display_register
 , .display_mail , .display_delete, .actions, .render {
   margin-left: 40%;
