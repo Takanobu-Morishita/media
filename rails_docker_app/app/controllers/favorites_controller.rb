@@ -13,5 +13,4 @@ class FavoritesController < ApplicationController
     current_user.unfavorite(post)
     redirect_back fallback_location: posts_path
   end
-
 end

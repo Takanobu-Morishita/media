@@ -38,7 +38,7 @@
           <td style="text-align:center;"><%= post.created_at.strftime('%Y-%m-%d') %></td>
           <td style="text-align:center;"><%= post.favorites.count %></td>
           <% if current_user.present? %>
-            <%= render 'favorite_button', {post: post} %>
+            <%= render 'layouts/favorite_button', {post: post} %>
           <% end %>
         </tr>
       <% end %>

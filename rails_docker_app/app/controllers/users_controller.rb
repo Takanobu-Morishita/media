@@ -36,7 +36,23 @@ class UsersController < ApplicationController
   end
 
   private
-  def user_params
-    params.require(:user).permit(:username, :profile, :email, :role)
-  end
+    def search_users_params
+      params.fetch(:q, {}).permit(
+        :store_name,
+        :department,
+        :name,
+        :name_kana,
+        :email,
+        statuses: [],
+        roles: [],
+      )
+    end
+    
+    def user_params
+      params.require(:user).permit(
+        :username, 
+        :profile, 
+        :email, 
+        :role)
+    end
 end

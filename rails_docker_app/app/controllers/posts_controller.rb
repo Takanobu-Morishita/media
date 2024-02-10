@@ -48,7 +48,17 @@ class PostsController < ApplicationController
   end
 
   private
-  def post_params
-    params.require(:post).permit(:title, :body, :genre)
-  end
+    def search_posts_params
+      params.fetch(:q, {}).permit(
+        :title,
+        :genre,
+      )
+    end
+
+    def post_params
+      params.require(:post).permit(
+        :title, 
+        :body, 
+        :genre,)
+    end
 end
