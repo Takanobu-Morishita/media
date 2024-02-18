@@ -18,7 +18,18 @@ class PostsController < ApplicationController
   end
 
   def create
+    require 'open-uri'
+
     @post = Post.new(post_params)
+
+    html = URI.open(@post.url).read
+    doc = Nokogiri::HTML.parse(html)
+
+    @post.url_title = doc.css('meta[property="og:title"] @content').to_s
+
+    image = doc.css('meta[property="og:image"] @content').to_s
+    @post.url_image.attach(io: URI.open(image), filename: image)
+
     @post.user_id = current_user.id
     @post.save
     redirect_to action: 'index'
@@ -35,7 +46,18 @@ class PostsController < ApplicationController
   end
 
   def update
+    require 'open-uri'
+
     @post = Post.find(params[:id])
+
+    html = URI.open(@post.url).read
+    doc = Nokogiri::HTML.parse(html)
+
+    @post.url_title = doc.css('meta[property="og:title"] @content').to_s
+
+    image = doc.css('meta[property="og:image"] @content').to_s
+    @post.url_image.attach(io: URI.open(image), filename: image)
+
     if @post.update(post_params)
       redirect_to action: 'index'
     else
@@ -60,6 +82,7 @@ class PostsController < ApplicationController
         :title, 
         :body, 
         :genre,
+        :url,
         :image,
         :image_cache,)
     end

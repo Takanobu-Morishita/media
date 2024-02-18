@@ -17,10 +17,9 @@
     <%= f.text_area :body %>
   </div>
 
-  <div class="display_image">
-    <%= f.label :image %>
-    <%= f.file_field :image, class:'f-control', accept: 'image/*'%>
-    <%= f.hidden_field :image_cache %>
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url, :size => 140, id: "url"  %>
   </div>
   
   <div class="display_post"><%= f.submit "投稿する" %>

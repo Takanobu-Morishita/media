@@ -13,6 +13,12 @@
     <%= f.label :ジャンル %><br>
     <%= f.select :genre, [["選択して下さい"], ["生活"], ["授業"], ["技術"],["サークル"]] %>
   </div>
+
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url, :size => 140, id: "url"  %>
+  </div>
+
   <div class="display_image">
     <%= f.label :image %>
     <%= f.file_field :image, class:'f-control', accept: 'image/*'%>

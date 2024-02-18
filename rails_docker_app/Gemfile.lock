@@ -295,6 +295,7 @@ DEPENDENCIES
   devise-i18n
   devise-i18n-views
   enum_help
+  image_processing (~> 1.2)
   importmap-rails
   jbuilder
   kaminari

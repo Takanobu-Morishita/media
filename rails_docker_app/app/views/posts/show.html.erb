@@ -17,8 +17,12 @@
   <% end %>
 </div>
 
+<p><a href="<%= @post.url %>"><%= @post.url %></a></p>
+<p><%= @post.url_title %></p>
+<div class="">
+  <%= image_tag @post.url_image.variant(resize: "200x200") %>
+</div>
+
 <div class="post_user_name"> 
   <%= link_to(@post.user.username, "/users/#{@post.user.id}")  %>さんのページ
 </div>
-
-<link rel="stylesheet" href="./app/assets/stylesheets/application.css">

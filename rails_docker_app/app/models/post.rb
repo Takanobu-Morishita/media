@@ -4,6 +4,8 @@ class Post < ApplicationRecord
   validates :user_id, {presence: true}
   belongs_to :user
 
+  has_one_attached :url_image
+
   belongs_to :user, optional: true
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
