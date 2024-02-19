@@ -23,6 +23,8 @@ ja:
           admin: '管理者'
         favorites: いいね
         favorites_posts: いいねした投稿
+        bookmarks: お気に入り
+        bookmarks_posts: お気に入りした投稿
         created_at: 登録日
         updated_at: 更新日
         reset_password_sent_at: リセットパスワード送信日

@@ -42,6 +42,7 @@
     </div>
           <% if current_user.present? %>
             <%= render 'layouts/favorite_button', {post: post} %>
+            <%= render 'layouts/bookmark_button', {post: post} %>
           <% end %>
         </tr>
       <% end %>

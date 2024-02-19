@@ -1,0 +1,7 @@
+<% if current_user.bookmark?(post) %>
+  <td>
+    <%= button_to 'ブックマークを外す', post_bookmark_path(post_id: post.id, id: current_user.bookmarks.find_by(post_id: post.id)), method: :delete %>
+  </td>
+<% else %>
+  <td><%= button_to 'ブックマーク', post_bookmarks_path(post_id: post.id), method: :post %></td>
+<% end %>
