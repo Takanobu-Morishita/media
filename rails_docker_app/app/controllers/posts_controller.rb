@@ -69,6 +69,10 @@ class PostsController < ApplicationController
     @posts = current_user.favorites_posts
   end
 
+  def bookmarks
+    @posts = current_user.bookmarks_posts
+  end
+
   private
     def search_posts_params
       params.fetch(:q, {}).permit(

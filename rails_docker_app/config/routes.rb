@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
   resources :posts, only:[:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :favorites, only: %i[create destroy]
+    resources :bookmarks, only: %i[create destroy]
   end
   resources :users, only:[:index, :show, :edit, :update, :destroy] do
     member do
       get :favorites
+      get :bookmarks
     end
   end
 
