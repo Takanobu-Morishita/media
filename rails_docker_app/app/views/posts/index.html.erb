@@ -24,29 +24,30 @@
       <%= link_to '新着順', posts_path(latest: "true"), id: "order_new" %>
       <%= link_to '古い順', posts_path(old: "true"), id: "order_old" %>
     </div>
-    <table class="list_content">
-      <tr>
-        <th>タイトル</th>
-        <th>ジャンル</th>
-        <th>投稿日</th>
-        <th>リンク</th>
-        <th>いいね！数</th>
-      </tr>
-      <% @posts.each do |post| %>
+    <div>
+      <table class="list_content">
         <tr>
-          <td style="text-align:center;"><%= link_to post.title, post_path(post), id: "post_title" %></td>
-          <td style="text-align:center;"><%= post.genre %></td>
-          <td style="text-align:center;"><%= post.created_at.strftime('%Y-%m-%d') %></td>
-          <td><a href="<%= post.url %>"><%= post.url %></a></td>
-          <td style="text-align:center;"><%= post.favorites.count %></td>
-    </div>
-          <% if current_user.present? %>
-            <%= render 'layouts/favorite_button', {post: post} %>
-            <%= render 'layouts/bookmark_button', {post: post} %>
-          <% end %>
+          <th>タイトル</th>
+          <th>ジャンル</th>
+          <th>投稿日</th>
+          <th>リンク</th>
+          <th>いいね！数</th>
         </tr>
-      <% end %>
-    </table>
+        <% @posts.each do |post| %>
+          <tr>
+            <td style="text-align:center;"><%= link_to post.title, post_path(post), id: "post_title" %></td>
+            <td style="text-align:center;"><%= post.genre %></td>
+            <td style="text-align:center;"><%= post.created_at.strftime('%Y-%m-%d') %></td>
+            <td><a href="<%= post.url %>"><%= post.url %></a></td>
+            <td style="text-align:center;"><%= post.favorites.count %></td>
+            <% if current_user.present? %>
+              <%= render 'layouts/favorite_button', {post: post} %>
+              <%= render 'layouts/bookmark_button', {post: post} %>
+            <% end %>
+          </tr>
+        <% end %>
+      </table>
+    </div>
     <div class="page">
     <%= paginate @posts %>
     </div>

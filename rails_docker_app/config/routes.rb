@@ -10,6 +10,9 @@ Rails.application.routes.draw do
       get :favorites
       get :bookmarks
     end
+    resource :relationships, only: [:create, :destroy]
+      get "followings" => "relationships#followings", as: "followings"
+      get "followers" => "relationships#followers", as: "followers"
   end
 
   root to: "home#index"

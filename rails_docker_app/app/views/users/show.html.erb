@@ -11,6 +11,8 @@
 <div class="display_username">ユーザ名:<%= @user.username %></div>
 <div class="display_mail">メールアドレス:<%= @user.email %></div>
 <div class="display_profile">プロフィール:<%= @user.profile %></div>
+<div class="display_username">フォロー:<%= @user.followings.count %></div>
+<div class="display_username">フォロワー:<%= @user.followers.count %></div>
 
 <div class="display_delete">
   <% if current_user.present? %>
