@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :posts, only:[:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :favorites, only: %i[create destroy]
     resources :bookmarks, only: %i[create destroy]
+    resources :post_comments, only: [:create]
   end
   resources :users, only:[:index, :show, :edit, :update, :destroy] do
     member do
