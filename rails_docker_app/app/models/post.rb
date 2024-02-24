@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   belongs_to :user
 
   has_one_attached :url_image
+  has_one :notification, as: :subject, dependent: :destroy
 
   belongs_to :user, optional: true
   has_many :favorites, dependent: :destroy
