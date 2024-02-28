@@ -11,19 +11,9 @@
     <% end %>
   </div>
   <body>
-    
-      <div class="search_form">
-        <%= form_with url: search_path, local: true, method: :get do |f| %>
-          <%= f.text_field :word %>
-          <%= f.select :genre, options_for_select([["ジャンル", nil],["全て", nil], ["生活", "生活"], ["授業", "授業"], ["技術", "技術"], ["サークル", "サークル"]]) %>
-          <%= f.submit "検索", class: "btn btn-primary" %>
-        <% end %>
-      </div>
+  <%= render 'search' %>
+
     <h1 class="list">投稿一覧</h1>
-    <div class="order">
-      <%= link_to '新着順', posts_path(latest: "true"), id: "order_new" %>
-      <%= link_to '古い順', posts_path(old: "true"), id: "order_old" %>
-    </div>
     <div>
       <table class="list_content">
         <tr>

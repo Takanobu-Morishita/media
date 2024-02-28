@@ -1,27 +1,29 @@
 class PostsFinder < BaseFinder
   def execute
     return Post.none if @scope.blank?
+    search_title
+    search_body
 
     @scope
   end
 
   private
 
-    def search_store_name
-      return if @q.store_name.blank?
+    def search_title
+      return if @q.title.blank?
 
-      words = split_freewords(@q.store_name)
+      words = split_freewords(@q.title)
 
       # usersテーブルに紐づくstoresテーブルのnameを検索したい場合は、controller側で事前にeager_loadを設定します
-      @scope = like_search_condition(@scope, "stores.name", words)
+      @scope = like_search_condition(@scope, "posts.title", words)
     end
 
-    def search_department
-      return if @q.department.blank?
+    def search_body
+      return if @q.body.blank?
 
-      words = split_freewords(@q.department)
+      words = split_freewords(@q.body)
 
-      @scope = like_search_condition(@scope, "department", words)
+      @scope = like_search_condition(@scope, "posts.body", words)
     end
 
     def search_statuses
