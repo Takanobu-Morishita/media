@@ -1,12 +1,8 @@
 class PostsController < ApplicationController
   def index
-    if params[:latest]
-      @posts = Post.latest.page(params[:page]).per(10)
-    elsif params[:old]
-      @posts = Post.old.page(params[:page]).per(10)
-    else
-      @posts = Post.latest.page(params[:page]).per(10)
-    end
+    @q = SearchPostsForm.new(search_post_params)
+    posts_all = Post.all
+    @posts = PostsFinder.new(@q, posts_all).execute.page(params[:page]).per(10)
   end
 
   def show
@@ -75,10 +71,11 @@ class PostsController < ApplicationController
   end
 
   private
-    def search_posts_params
+    def search_post_params
       params.fetch(:q, {}).permit(
         :title,
         :genre,
+        :body,
       )
     end
 
