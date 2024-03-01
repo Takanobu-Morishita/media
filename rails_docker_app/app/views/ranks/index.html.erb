@@ -1,0 +1,10 @@
+<div>
+  <%= link_to "投稿一覧", posts_path, class: "navbar-item button is-warning is-light", id: "user_list" %>
+  <br>
+  <% @post_favorite_ranks.each.with_index(1) do |post, i| %>
+    第<%= i %>位
+    :
+    <%= link_to post.title, post_path(post), id: "post_title" %>
+    :
+  <% end %>
+</div>
